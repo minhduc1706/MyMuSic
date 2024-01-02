@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.5.1-web/css/all.css">
+    <link rel="stylesheet" href="assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="icon" href="assets/images/images.png" type="image/x-icon">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <title>My Music Player</title>
+</head>
+
+<body class="body">
+    <video autoplay muted loop class="wrapper active">
+        <source src="assets/music/blue.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <!-- background video -->
+        <video autoplay muted loop class="video-background">
+            <source src="assets/music/myCat.mp4" type="video/mp4">
+        </video>
+
+        <!-- cd -->
+        <div class="cd">
+            <!-- setting -->
+            <div class="setting-container">
+                <div class="setting-btn">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="setting-options">
+                    <div class="add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="moon-toggle">
+                        <i class="black-moon active fa-solid fa-moon"></i>
+                        <i class="light-moon fa-regular fa-moon"></i>
+                    </div>
+                    <div class="timer">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- cd-imgage-->
+            <div class="image-container">
+                <div class="cd-thumb" style="background-image: url('assets/images/bray.jpg');"></div>
+                <h2 class="namesong name1">name song</h2>
+                <button class="play-btn">
+                    <i class="fa-solid fa-play icon-play"></i>
+                    <i class="fa-solid fa-pause icon-pause"></i>
+                    <span class="text">PLAY</span>
+                </button>
+            </div>
+
+        </div>
+        <!-- playlist -->
+        <div class="playlist">
+            <!-- /title -->
+            <div class="title">
+                <span>Song</span>
+                <span>Time</span>
+            </div>
+            <!-- listSongs -->
+            <div class="list-songs"></div>
+        </div>
+
+        <!-- player -->
+        <div class="player">
+            <!-- info -->
+            <div class="song-info">
+                <div class="img-thumb" style="background-image: url('assets/images/bray.jpg');"></div>
+                <div class="info">
+                    <h3 class="author">Bray</h3>
+                    <h5 class="namesong">Anh Van Luon Nhu Vay</h5>
+                </div>
+            </div>
+            <!-- player-btn -->
+            <div class="control">
+                <div class="volume">
+                    <div class="volume-icon">
+                        <i class="fa-solid fa-volume-high full-volume active"></i>
+                        <i class="fa-solid fa-volume-xmark outed-volume"></i>
+                    </div>
+                    <input type="range" id="progress" class="volume-slider" min="0" max="100" value="50" step="1" />
+                </div>
+                <div class="adjust-btn">
+                    <div class="control-btn">
+                        <div class="repeat-btn btn">
+                            <i class="fa-solid fa-repeat"></i>
+                        </div>
+                        <div class="backward-btn btn">
+                            <i class="fa-solid fa-backward-step"></i>
+                        </div>
+                        <div class="rewind-btn btn">
+                            <i class="fa-solid fa-backward"></i>
+                        </div>
+                        <div class="toggle-play-btn btn">
+                            <i class="fa-solid fa-play icon-play"></i>
+                            <i class="fa-solid fa-pause icon-pause"></i>
+                        </div>
+                        <div class="forward-btn btn">
+                            <i class="fa-solid fa-forward"></i>
+                        </div>
+                        <div class="next-btn btn">
+                            <i class="fa-solid fa-forward-step"></i>
+                        </div>
+                        <div class="shuffle-btn btn">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <span class="currentTime"></span>
+                        <input type="range" id="progress" class="longVolume" min="0" max="100" step="1" value="0">
+                        <audio id="audio" src=""></audio>
+                        <span class="endTime"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form add song -->
+    <div class="songFormContainer">
+        <form id="songForm">
+            <div class="songForm-header">
+                <i class="header-icon fa-solid fa-music"></i>Song
+            </div>
+            <div id="closeButton"><i class="fa-solid fa-xmark"></i></div>
+            <div class="songForm-body">
+                <label for="songName">Song Name:</label>
+                <input type="text" id="songName" required>
+
+                <label for="songLink">Song Link (youtube):</label>
+                <input type="text" id="songLink" required>
+
+                <label for="songImage">Song Image URL:</label>
+                <input type="text" id="songImage" required>
+
+                <label for="singer">Singer Name:</label>
+                <input type="text" id="singerName" required>
+
+                <button type="button" class="submitSong" id="submitSong">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
